@@ -1,0 +1,8 @@
+**/dist/**
+**/*.metta
+packages/core/src/prelude.ts
+corpus/**
+pnpm-lock.yaml
+
+packages/das-client/src/gen/
+packages/das-client/proto/
