@@ -1,0 +1,36 @@
+{
+  "name": "@metta-ts/examples",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable TypeScript examples for MeTTa TS. Run with: npx tsx examples/<file>.ts",
+  "scripts": {
+    "quickstart": "tsx quickstart.ts",
+    "grounded-ops": "tsx grounded-ops.ts",
+    "async": "tsx async.ts",
+    "edsl": "tsx edsl.ts",
+    "hyperon-api": "tsx hyperon-api.ts",
+    "matching": "tsx matching.ts",
+    "nondeterminism": "tsx nondeterminism.ts",
+    "stdlib": "tsx stdlib.ts",
+    "types": "tsx types.ts",
+    "js-interop": "tsx js-interop.ts",
+    "json-module": "tsx json-module.ts",
+    "custom-matching": "tsx custom-matching.ts",
+    "concurrency": "tsx concurrency.ts",
+    "transactions": "tsx transactions.ts",
+    "scaling": "tsx scaling.ts",
+    "parallel-matcher": "tsx parallel-matcher.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@metta-ts/core": "workspace:*",
+    "@metta-ts/edsl": "workspace:*",
+    "@metta-ts/hyperon": "workspace:*",
+    "@metta-ts/node": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.0.0"
+  }
+}

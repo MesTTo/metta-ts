@@ -1,0 +1,31 @@
+; SPDX-FileCopyrightText: 2025 Patrick Hammer — PeTTa (https://github.com/trueagi-io/PeTTa)
+; SPDX-FileCopyrightText: 2026 MesTTo — MeTTa-TS adaptation
+;
+; SPDX-License-Identifier: MIT
+;
+; Adapted from PeTTa examples/peano.metta for MeTTa-TS (Hyperon) conventions.
+
+(= (add-atom-no-duplicate $Space $Atom)
+   (if (== () (collapse (once (match $Space $Atom $Atom))))
+       (add-atom $Space $Atom)
+       (empty)))
+
+;For every existing num($t), add num(S $t):
+(= (expand-once)
+   (case (match &self (num $t) $t) 
+         (($x (add-atom-no-duplicate &self (num (S $x)))))))
+
+;Peano builders:
+(= (expandK $n)
+   (if (== $n 0)
+       done
+       (let $temp1 (expand-once)
+            (expandK (- $n 1)))))
+
+;Peano demo:
+(= (demo-peano $K)
+   (let* (($s (add-atom &self (num Z)))
+          ($g (expandK $K)))
+         (match &self (num $1) $1)))
+
+!(test (length (collapse (demo-peano 300))) 301)

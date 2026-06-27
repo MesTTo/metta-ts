@@ -1,0 +1,50 @@
+{
+  "name": "@metta-ts/das-gateway",
+  "version": "1.0.1",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean"
+  },
+  "dependencies": {
+    "@metta-ts/core": "workspace:*"
+  },
+  "author": "MesTTo",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "module": "./dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "HTTP/Connect gateway bridging MeTTa TS to a Distributed AtomSpace, reachable from the browser.",
+  "keywords": [
+    "metta",
+    "hyperon",
+    "das",
+    "gateway",
+    "singularitynet"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MesTTo/Meta-TypeScript-Talk.git",
+    "directory": "packages/das-gateway"
+  },
+  "homepage": "https://github.com/MesTTo/Meta-TypeScript-Talk#readme",
+  "bugs": {
+    "url": "https://github.com/MesTTo/Meta-TypeScript-Talk/issues"
+  }
+}

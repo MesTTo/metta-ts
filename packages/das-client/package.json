@@ -1,0 +1,56 @@
+{
+  "name": "@metta-ts/das-client",
+  "version": "1.0.1",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "gen": "protoc --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./src/gen --ts_proto_opt=outputServices=grpc-js,esModuleInterop=true,forceLong=string -I proto proto/*.proto"
+  },
+  "dependencies": {
+    "@metta-ts/core": "workspace:*",
+    "@grpc/grpc-js": "^1.14.4",
+    "@bufbuild/protobuf": "^2.2.3"
+  },
+  "devDependencies": {
+    "ts-proto": "^2.11.8"
+  },
+  "author": "MesTTo",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "module": "./dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Client for SingularityNET Distributed AtomSpace (DAS) for MeTTa TS, over a Connect gateway.",
+  "keywords": [
+    "metta",
+    "hyperon",
+    "das",
+    "distributed-atomspace",
+    "singularitynet"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MesTTo/Meta-TypeScript-Talk.git",
+    "directory": "packages/das-client"
+  },
+  "homepage": "https://github.com/MesTTo/Meta-TypeScript-Talk#readme",
+  "bugs": {
+    "url": "https://github.com/MesTTo/Meta-TypeScript-Talk/issues"
+  }
+}

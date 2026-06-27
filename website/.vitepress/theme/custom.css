@@ -1,0 +1,22 @@
+/*
+ * SPDX-FileCopyrightText: 2026 MesTTo
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Hero: render "MeTTa" with a blue-to-purple gradient (matching metta-lang.dev), and place the
+ * TypeScript logo after it instead of the plain text "TS". */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #4b8bff 28%, #b14fff);
+}
+
+.VPHero .name::after {
+  content: "";
+  display: inline-block;
+  width: 0.82em;
+  height: 0.82em;
+  margin-left: 0.22em;
+  vertical-align: -0.08em;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'><rect width='256' height='256' rx='34' fill='%233178c6'/><text x='133' y='192' font-family='Inter,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif' font-weight='800' font-size='150' text-anchor='middle' fill='%23ffffff'>TS</text></svg>")
+    center / contain no-repeat;
+}
