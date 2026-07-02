@@ -1,0 +1,34 @@
+{
+  "name": "metta-ts",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.2.2",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "pnpm -r --filter \"./packages/*\" exec tsc --noEmit",
+    "lint": "eslint \"packages/*/src/**/*.ts\"",
+    "format": "prettier --write \"packages/*/src/**/*.ts\" \"*.{json,md}\"",
+    "format:check": "prettier --check \"packages/*/src/**/*.ts\" \"*.{json,md}\"",
+    "oracle": "vitest run packages/core/src/oracle.test.ts",
+    "bench": "pnpm --filter @metta-ts/core build && node packages/node/bench/suite.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^10.5.0",
+    "eslint-config-prettier": "^10.1.8",
+    "fast-check": "^3.23.1",
+    "mitata": "^1.0.34",
+    "prettier": "^3.8.4",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.62.0",
+    "vitest": "^2.1.8"
+  }
+}

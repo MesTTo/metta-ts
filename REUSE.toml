@@ -1,0 +1,31 @@
+version = 1
+
+# Files that cannot carry an inline comment header (JSON, lockfiles, config, Markdown, CI).
+[[annotations]]
+path = [
+  "*.json",
+  "**/*.json",
+  "*.md",
+  "**/*.md",
+  "*.yaml",
+  "**/*.yaml",
+  "*.yml",
+  "**/*.yml",
+  "*.toml",
+  "**/*.toml",
+  ".gitignore",
+  ".editorconfig",
+  ".nvmrc",
+  ".prettierignore",
+  "LICENSE",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 MesTTo"
+SPDX-License-Identifier = "MIT"
+
+# The Hyperon oracle corpus and its expected output are derived from hyperon-experimental (MIT).
+[[annotations]]
+path = ["corpus/EXPECTED.txt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 TrueAGI Inc. and the hyperon-experimental contributors"
+SPDX-License-Identifier = "MIT"

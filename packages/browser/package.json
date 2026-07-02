@@ -1,0 +1,50 @@
+{
+  "name": "@metta-ts/browser",
+  "version": "1.0.5",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean --platform browser"
+  },
+  "dependencies": {
+    "@metta-ts/core": "workspace:*"
+  },
+  "author": "MesTTo",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "module": "./dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Browser entry for MeTTa TS with an in-memory virtual file system for import!.",
+  "keywords": [
+    "metta",
+    "hyperon",
+    "browser",
+    "atomspace",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MesTTo/Meta-TypeScript-Talk.git",
+    "directory": "packages/browser"
+  },
+  "homepage": "https://github.com/MesTTo/Meta-TypeScript-Talk#readme",
+  "bugs": {
+    "url": "https://github.com/MesTTo/Meta-TypeScript-Talk/issues"
+  }
+}

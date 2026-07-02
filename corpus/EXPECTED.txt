@@ -1,0 +1,28 @@
+# Oracle expectations: this minimal-MeTTa interpreter vs Hyperon's own test corpus.
+# Columns:  <file>  <expected PASS>  <expected FAIL>  <TOTAL !-assertions>
+# Checked by scripts/run-oracle.sh.  Every assertion passes (FAIL=0): 270/270.
+#
+# f1_imports.metta is intentionally absent: Hyperon marks it Python-mode-only (its
+# header says it "won't work under no python mode"), so it is not part of this corpus.
+test_stdlib.metta         39 0 39
+a1_symbols.metta          7  0 7
+a2_opencoggy.metta        1  0 1
+a3_twoside.metta          4  0 4
+b0_chaining_prelim.metta  5  0 5
+b1_equal_chain.metta      8  0 8
+b2_backchain.metta        6  0 6
+b3_direct.metta           4  0 4
+b4_nondeterm.metta        11 0 11
+b5_types_prelim.metta     26 0 26
+c1_grounded_basic.metta   21 0 21
+c2_spaces.metta           25 0 25
+c3_pln_stv.metta          5  0 5
+e1_kb_write.metta         3  0 3
+e2_states.metta           14 0 14
+e3_match_states.metta     9  0 9
+d1_gadt.metta             14 0 14
+d2_higherfunc.metta       25 0 25
+d3_deptypes.metta         8  0 8
+d4_type_prop.metta        18 0 18
+d5_auto_types.metta       7  0 7
+g1_docs.metta             10 0 10
