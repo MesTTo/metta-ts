@@ -1,0 +1,53 @@
+{
+  "name": "@metta-ts/node",
+  "version": "1.0.4",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "metta-ts": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts src/cli.ts --format esm --dts --clean"
+  },
+  "dependencies": {
+    "@metta-ts/core": "workspace:*"
+  },
+  "author": "MesTTo",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "module": "./dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Node.js entry for MeTTa TS: the metta-ts CLI, file import!, and a worker-thread parallel matcher.",
+  "keywords": [
+    "metta",
+    "hyperon",
+    "cli",
+    "atomspace",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MesTTo/Meta-TypeScript-Talk.git",
+    "directory": "packages/node"
+  },
+  "homepage": "https://github.com/MesTTo/Meta-TypeScript-Talk#readme",
+  "bugs": {
+    "url": "https://github.com/MesTTo/Meta-TypeScript-Talk/issues"
+  }
+}

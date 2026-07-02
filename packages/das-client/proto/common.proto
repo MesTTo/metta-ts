@@ -1,0 +1,13 @@
+// SPDX-FileCopyrightText: 2026 SingularityNET Foundation (generated from singnet/das-proto)
+//
+// SPDX-License-Identifier: MIT
+
+syntax = "proto3";
+package dasproto;
+
+message Empty {}
+
+message Ack {
+    bool error = 1;
+    string msg = 2;
+}

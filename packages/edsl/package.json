@@ -1,0 +1,42 @@
+{
+  "name": "@metta-ts/edsl",
+  "version": "1.0.4",
+  "author": "MesTTo",
+  "license": "MIT",
+  "description": "Ergonomic, typed TypeScript eDSL for MeTTa: typed term builders, rewrite rules, a tagged-template surface, and auto-grounding of TypeScript values.",
+  "keywords": ["metta", "hyperon", "edsl", "dsl", "term-rewriting", "typescript"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist"],
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean"
+  },
+  "dependencies": {
+    "@metta-ts/hyperon": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MesTTo/Meta-TypeScript-Talk.git",
+    "directory": "packages/edsl"
+  },
+  "homepage": "https://github.com/MesTTo/Meta-TypeScript-Talk#readme",
+  "bugs": {
+    "url": "https://github.com/MesTTo/Meta-TypeScript-Talk/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,20 @@
+; SPDX-FileCopyrightText: 2025 Patrick Hammer — PeTTa (https://github.com/trueagi-io/PeTTa)
+; SPDX-FileCopyrightText: 2026 MesTTo — MeTTa-TS adaptation
+;
+; SPDX-License-Identifier: MIT
+;
+; Adapted from PeTTa examples/cut.metta for MeTTa-TS (Hyperon) conventions.
+;
+; PeTTa keeps only the first solution with Prolog's `(cut)`. Hyperon/@metta-ts is not a backtracking
+; engine, so there is nothing to cut; the equivalent "first result only" operator is `once`.
+
+(foo 1)
+(foo 2)
+
+(= (match-single $space $pat $ret)
+   (once (match $space $pat $ret)))
+
+!(let $x (match-single &self (foo $1) $1) (add-atom &self (bar $x)))
+
+!(test (collapse (match &self (bar $1) (bar $1)))
+       ((bar 1)))
