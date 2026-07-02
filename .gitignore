@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+zod
+
+# TypeDoc output (per-package)
+packages/*/docs/
+
+# VitePress build output
+website/.vitepress/dist/
+website/.vitepress/cache/
+packages/node/bench/lib

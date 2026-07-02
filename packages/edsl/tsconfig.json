@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": ["node"],
+    // The `names()`/`vars()` proxies are total dictionaries: any property access returns a builder,
+    // never undefined. `noUncheckedIndexedAccess` cannot express a total index signature, so under it
+    // `const { parent } = names()` would type `parent` as possibly-undefined and reject `parent(a, b)`.
+    // That defeats the proxy ergonomics (the whole point of the package), and the flag is off by default
+    // even in `strict`. Every real index access in this package is `!`-asserted or bounds-guarded, so
+    // turning it off here costs no genuine safety.
+    "noUncheckedIndexedAccess": false
+  }
+}
